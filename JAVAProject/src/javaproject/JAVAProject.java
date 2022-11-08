@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-// Server class
+// Server c
 class Server {
 
 	public static void main(String[] args) throws SQLException {
@@ -19,7 +19,7 @@ class Server {
 		try {
 			server = new ServerSocket(1234);
 			server.setReuseAddress(true);
-			System.out.println("Started");
+			System.out.println("started");
 			while (true) {
 				Socket client = server.accept();
 				System.out.println("New client connected" + client.getInetAddress().getHostAddress());
