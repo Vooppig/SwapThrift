@@ -19,7 +19,7 @@ class Server {
 		try {
 			server = new ServerSocket(1234);
 			server.setReuseAddress(true);
-			System.out.println("SSSS");
+			System.out.println("started");
 			while (true) {
 				Socket client = server.accept();
 				System.out.println("New client connected" + client.getInetAddress().getHostAddress());
