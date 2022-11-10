@@ -135,6 +135,7 @@ public class LogInForm extends javax.swing.JFrame {
         else
         {
             //set and send values to main class
+            //biylevel true utgig butsaan avch mainframe ru shiljine
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
