@@ -36,6 +36,19 @@ class Server {
 				}
 			}
 		}
+                
+                //SignUpForm-d duudaj burtgelin utguuda shidne.
+                //Enend SignUp() classin object uusgej database ru
+                //higed amjilttai bol true return hine
+                public DoSignUp(){
+                    
+                }
+                
+                //LogInForm-d oruulsan 2 utgiig iishe shidej endes LogIn()
+                //ru yavuulj database tei haritsulad biylvel true butsaana
+                public DoLogIn(){
+                    
+                }
 	}
 
 	private static class ClientHandler implements Runnable {

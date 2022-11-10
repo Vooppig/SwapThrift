@@ -115,7 +115,8 @@ public class SignUpForm extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Fill out the form properly!", "Error", JOptionPane.ERROR_MESSAGE);
         }
         else{
-            userRegister(firstname, lastname, username, password);
+            //send values to Main class
+            //biylevel true utga butsaan avch LogInForm ru messagetei shiljine
         }
     }//GEN-LAST:event_btnSignUpActionPerformed
 
@@ -166,38 +167,4 @@ public class SignUpForm extends javax.swing.JFrame {
     private javax.swing.JTextField tfLastName;
     private javax.swing.JTextField tfUserName;
     // End of variables declaration//GEN-END:variables
-
-    private void userRegister(String firstname, String lastname, String username, String password) {
-        
-        Connection con = (Connection) DatabaseConnection.connectDatabase();
-        if(con != null){
-        try{
-            PreparedStatement st = (PreparedStatement)
-                con.prepareStatement("INSERT INTO ts_user_table (name,user_pass,firstname,lastname) VALUES(?,?,?,?)");
-            st.setString(1, username);
-            st.setString(2, password);
-            st.setString(3, firstname);
-            st.setString(4, lastname);
-            int result = st.executeUpdate();
-            
-            JOptionPane.showMessageDialog(this, "Data inserted!", "Success!", JOptionPane.INFORMATION_MESSAGE);
-            
-            tfUserName.setText("");
-            pfPassword.setText("");
-            tfFirstName.setText("");
-            tfLastName.setText("");
-            
-            dispose();
-            LogInForm m = new LogInForm();
-            m.setTitle("Login");
-            m.setVisible(true);
-        }
-        catch (SQLException ex){
-            System.Logger.getLogger(LogInForm.class.getName()).log(System.Logger.Level.SEVERE, null, ex);
-        }
-        }
-        else{
-            System.out.println("Database connection unavailable");
-        }
-    }
 }
