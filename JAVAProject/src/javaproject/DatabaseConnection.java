@@ -4,33 +4,22 @@
  */
 package javaproject;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.*;
 
 /**
  *
  * @author USER
  */
-public class DatabaseConnection {
+public class DatabaseConnection {private static final String DB_URL = "jdbc:postgresql://localhost:5432/javaprojects?user=postgres&password=8950";
 
-	private static final String dburl = "jdbc:postgresql://localhost:5432/javaprojects?user=postgres&password=8950";
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		try {
-			try (Connection conn = DriverManager.getConnection(dburl)) {
-				System.out.println("Success");
-				conn.close();
-			}
-		} catch (SQLException ex) {
-			Logger.getLogger(DatabaseConnection.class.getName()).log(Level.SEVERE, null, ex);
-		}
-	}
-
+	public Connection connect() {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(DB_URL);
+            System.out.println("Connected to the PostgreSQL server successfully.");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return conn;
+    }
 }
