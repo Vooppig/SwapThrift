@@ -8,7 +8,6 @@ import com.sun.jdi.connect.spi.Connection;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import javax.swing.JOptionPane;
-import java.sql.*;
 
 /**
  *
