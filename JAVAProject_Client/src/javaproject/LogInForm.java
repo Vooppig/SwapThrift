@@ -37,9 +37,8 @@ public class LogInForm extends javax.swing.JFrame {
         tfUsername = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         pfPassword = new javax.swing.JPasswordField();
-        btnToSignup = new javax.swing.JButton();
-        cbRememberMe = new javax.swing.JCheckBox();
         btnLogin = new javax.swing.JButton();
+        btnCustomer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,24 +48,17 @@ public class LogInForm extends javax.swing.JFrame {
 
         pfPassword.setText("jPasswordField2");
 
-        btnToSignup.setText("Шинээр бүртгэл үүсгэх");
-        btnToSignup.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnToSignupActionPerformed(evt);
-            }
-        });
-
-        cbRememberMe.setText("Remember me");
-        cbRememberMe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbRememberMeActionPerformed(evt);
-            }
-        });
-
         btnLogin.setText("Нэвтрэх");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
+            }
+        });
+
+        btnCustomer.setText("Үйлчлүүлэгч");
+        btnCustomer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCustomerActionPerformed(evt);
             }
         });
 
@@ -77,14 +69,13 @@ public class LogInForm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(59, 59, 59)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCustomer)
                     .addComponent(btnLogin)
-                    .addComponent(btnToSignup)
                     .addComponent(jLabel1)
-                    .addComponent(cbRememberMe)
                     .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,12 +88,11 @@ public class LogInForm extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbRememberMe)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnToSignup)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addComponent(btnLogin))
+                .addGap(18, 18, 18)
+                .addComponent(btnLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnCustomer)
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -112,7 +102,7 @@ public class LogInForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(72, 72, 72)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,13 +129,12 @@ public class LogInForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void btnToSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnToSignupActionPerformed
-        // TODO add your handling code here:
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
         dispose();
-        SignUpForm m = new SignUpForm();
-        m.setTitle("SignUp");
+        MainMenu m = new MainMenu();
+        m.setTitle("MainMenu");
         m.setVisible(true);
-    }//GEN-LAST:event_btnToSignupActionPerformed
+    }//GEN-LAST:event_btnCustomerActionPerformed
 
 	private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jCheckBox1ActionPerformed
 		// TODO add your handling code here:
@@ -191,9 +180,8 @@ public class LogInForm extends javax.swing.JFrame {
 //	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnLogin;
-    private javax.swing.JButton btnToSignup;
-    private javax.swing.JCheckBox cbRememberMe;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

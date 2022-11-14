@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package javaproject.zurag;
+package javaproject;
 
 import com.sun.jdi.connect.spi.Connection;
 import java.sql.PreparedStatement;
@@ -14,23 +14,22 @@ import javax.swing.JOptionPane;
  *
  * @author Erkhes
  */
-public class SignUp {
-    private void SignUp(String firstname, String lastname, String username, String password){
+public class LogIn {
+    private void LogIn(String username, String password) throws SQLException{
         
         DatabaseConnection conn = new DatabaseConnection();
         if(conn.connect() != null){
         try{
-            PreparedStatement st = (PreparedStatement)
-                conn.connect().prepareStatement("INSERT INTO ts_user_table (name,user_pass,firstname,lastname) VALUES(?,?,?,?)");
+            String query = "SELECT * FROM user_table where username = ? && userpass = ?";
+            PreparedStatement st = conn.connect().prepareStatement(query);
             st.setString(1, username);
             st.setString(2, password);
-            st.setString(3, firstname);
-            st.setString(4, lastname);
-            int result = st.executeUpdate();
-            //
+            ResultSet result = st.executeQuery();
+            
+            //check if input is correct
         }
         catch (SQLException ex){
-            System.Logger.getLogger(SignUp.class.getName()).log(System.Logger.Level.SEVERE, null, ex);
+            System.Logger.getLogger(LogIn.class.getName()).log(System.Logger.Level.SEVERE, null, ex);
         }
         }
         else{

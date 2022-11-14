@@ -38,6 +38,12 @@ class Server {
                 }
             }
         }
+        
+        //LogInForm-d oruulsan 2 utgiig iishe shidej endes LogIn()
+                //ru yavuulj database tei haritsulad biylvel true butsaana
+                public DoLogIn(){
+                    
+                }
     }
 
     private static class ClientHandler implements Runnable {
