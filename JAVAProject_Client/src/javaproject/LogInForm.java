@@ -5,6 +5,8 @@
 package javaproject;
 
 import com.sun.jdi.connect.spi.Connection;
+import java.io.ObjectInputStream;
+import java.io.PrintWriter;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import javax.swing.JOptionPane;
@@ -126,6 +128,15 @@ public class LogInForm extends javax.swing.JFrame {
         {
             //set and send values to main class
             //biylevel true utgig butsaan avch mainframe ru shiljine
+            PrintWriter out = null;
+            ObjectInputStream ois = null;
+            TS_Object a;
+            try {
+                out = new PrintWriter(clientSocket.getOutputStream(), true);
+                ois = new ObjectInputStream(clientSocket.getInputStream());
+                while ((a = (TS_Object) ois.readObject()) != null) {
+                    System.out.println(a.getCode());
+                }
         }
     }//GEN-LAST:event_btnLoginActionPerformed
 
